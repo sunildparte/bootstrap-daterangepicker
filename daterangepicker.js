@@ -486,7 +486,6 @@
         },
 
         renderCalendar: function (calendar, selected, minDate, maxDate) {
-
             var html = '<div class="calendar-date">';
             html += '<table class="table-condensed">';
             html += '<thead>';
@@ -530,7 +529,8 @@
 
                     if ((minDate && calendar[row][col].isBefore(minDate)) || (maxDate && calendar[row][col].isAfter(maxDate))) {
                         cname = ' off disabled ';
-                    } else if (calendar[row][col].format('YYYY-MM-DD') == selected.format('YYYY-MM-DD')) {
+                    } 
+                    if (calendar[row][col].format('YYYY-MM-DD') == selected.format('YYYY-MM-DD')) {
                         cname += ' active ';
                         if (calendar[row][col].format('YYYY-MM-DD') == this.startDate.format('YYYY-MM-DD')) {
                             cname += ' start-date ';
